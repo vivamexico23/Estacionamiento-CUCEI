@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjsHjJJJJL6rbBjZVUXROHXhPBXyTDOF0&callback=initMap" async defer></script>
+
+
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="formato.css" />
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <ons-navigator swipeable id="myNavigator" page="page1.html">
+
+        <template id="page1.html">
+            <ons-page id="pagina1">
+                <div align="center" id="caratula">
+                    <img class="logo" src="https://seeklogo.com/images/L/leones-negros-logo-4E79E4D0FB-seeklogo.com.png">
+                </div>
+                <div id="inicio" style="display: none">
+                    <ons-toolbar>
+                        <div class="center"> <p > Login </p></div>
+                    </ons-toolbar>
+                    <center>
+                        <img class="login" src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0012/5039/brand.gif?itok=DkN_bgPD">
+                        <h1>Estacionamiento CUCEI</h1>
+                        <form id="form_ingresar">
+                            <ons-input input-id="codigo_login" class="form_ingresa" placeholder="Usuario" type="text" modifier="underbar"> </ons-input>
+                            <br>
+                            <br>
+                            <ons-input input-id="password_login" class="form_ingresa" placeholder="Password" type="password" modifier="underbar"> </ons-input>
+                            <br>
+                            <br>
+                            <ons-button onclick="Enviar()">Enviar</ons-button>
+                            <ons-button onclick="Pagina_Nuevo()">Nuevo usuario</ons-button>
+                            <br>
+                        </form>
+                    </center>
+                </div>
+            </ons-page>
+        </template>
+        
+
+        <template id="page2.html">
+            <ons-page id="pagina2">
+                <ons-toolbar>
+                    <div class="right">
+                        <ons-toolbar-button onclick="Salir()">Salir</ons-toolbar-button>
+                    </div>
+                    <div class="center"> <p>Bienvenida</p> </div>
+                </ons-toolbar>
+                <center>
+                    <h1>Estacionamiento CUCEI</h1>
+                    <div id="alumno_udg"></div>
+                    <div id="codigo_udg"></div>
+                </center>
+                <script>
+                    setTimeout(function() {
+                        $("#emergente").fadeIn();
+                    }, 800);
+                </script>
+                <div id="emergente" style="display: none">
+                    <div id="subemergente">
+                        <form id="form_insertar">
+                            <center>
+                                <h1>Ingrese sus Datos</h1>
+                                <div id="alumno2_udg"></div>
+                                <br>
+                                <ons-input input-id="placas_insertar" class="form_inserta" placeholder="Placas" type="text" modifier="underbar"> </ons-input>
+                                <br>
+                                <br>
+                                <ons-input input-id="telefono_insertar" class="form_inserta" placeholder="Telefono" type="number" modifier="underbar"> </ons-input>
+                                <br>
+                                <br>
+                                <br>
+                                <ons-button onclick="Insertar()">Salvar</ons-button>
+                                <ons-button onclick="Limpiar('#form_insertar ons-input', '#form_insertar input:first')">Limpiar</ons-button>
+                                <br>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </ons-page>
+        </template>
+
+
+
+        <template id="nuevo.html">
+            <ons-page id="pagina3">
+                <ons-toolbar>
+                    <div class="right">
+                        <ons-toolbar-button onclick="Salir()">Salir</ons-toolbar-button>
+                    </div>
+                    <div class="center"> <p>Nuevo Usuario</p> </div>
+                </ons-toolbar>
+                <form id="form_innovar">
+                    <center>
+                        <h1>Ingrese sus Datos</h1>
+                        <br>
+                        <b class="estilo">Codigo Generado: </b>
+                        <div id="codigo_nuevo"></div>
+                        <br>
+                        <ons-input input-id="nombre_innovar" class="form_innova" placeholder="Nombre" type="text" modifier="underbar"> </ons-input>
+                        <br>
+                        <br>
+                        <ons-input input-id="placas_innovar" class="form_innova" placeholder="Placas" type="text" modifier="underbar"> </ons-input>
+                        <br>
+                        <br>
+                        <ons-input input-id="telefono_innovar" class="form_innova" placeholder="Telefono" type="number" modifier="underbar"> </ons-input>
+                        <br>
+                        <br>
+                        <ons-input input-id="password_innovar" class="form_innova" placeholder="Password" type="password" modifier="underbar"> </ons-input>
+                        <br>
+                        <br>
+                        <br>
+                        <ons-button onclick="Insertar_Nuevo()">Salvar</ons-button>
+                        <ons-button onclick="Limpiar('#form_innovar ons-input', '#form_innovar input:first')">Limpiar</ons-button>
+                        <br>
+                    </center>
+                </form>
+            </ons-page>
+        </template>
+
+
+        <template id="mapa.html">
+            <ons-page id="pagina4">
+                <ons-toolbar>
+                    <div class="center"> <p>Estacionamiento</p> </div>
+                    <div class="right">
+                        <ons-toolbar-button onclick="Salir()">Salir</ons-toolbar-button>
+                    </div>
+                </ons-toolbar>
+                <br>
+                <b class="estilo">Alumno: </b>
+                <br>
+                <div id="nombre_mapa"></div>
+                <br>
+                <b class="estilo">Codigo: </b>
+                <br>
+                <div id="codigo_mapa"></div>
+                <br>
+                <b class="estilo">Placas: </b>
+                <br>
+                <div id="placas_mapa"></div>
+                <br>
+                <ons-button id="arribar" onclick="Localizacion()">Arribar</ons-button> <ons-button onclick="Abandonar()">Abandonar</ons-button>
+                <br>
+                <br>
+                <div id ="map"> </div> 
+            </ons-page>
+        </template>
+
+    </ons-navigator>
+</body>
+
+</html>

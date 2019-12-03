@@ -1,0 +1,105 @@
+img.logo {
+    width: 180px;
+    height: 180px;
+    margin: 180px auto 50px auto;
+    text-align: center;
+}
+
+img.login {
+    width: 300px;
+    height: 200px;
+    margin: 80px auto 5px auto;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#emergente {
+    position: fixed;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#subemergente {
+    position: absolute;
+    background-color: #D3DCE3;
+    border: solid #FFF 10px;
+    width: 330px;
+    height: 280px;
+    top: 55%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -164px;
+}
+
+#map {
+    height: 70%;
+}
+
+#pagina1 .page__background {
+    background-image: url('https://as.com/meristation/imagenes/2019/05/08/betech/1557336018_870068_1557341493_noticia_normal.jpg');
+    background-image: {-webkit-filter: brightness(250%);filter: brightness(250%);}
+}
+
+#pagina2 .page__background {
+    background-image: url('https://i.pinimg.com/originals/84/12/8b/84128b9b6480cb4f8d574f321e30eb18.png');
+    background-image: {-webkit-filter: brightness(250%);filter: brightness(250%);}
+}
+
+#pagina3 .page__background {
+    background-image: url('https://i.pinimg.com/originals/84/12/8b/84128b9b6480cb4f8d574f321e30eb18.png');
+    background-image: {-webkit-filter: brightness(250%);filter: brightness(250%);}
+}
+
+#pagina4 .page__background {
+    background-image: url('https://i.pinimg.com/originals/84/12/8b/84128b9b6480cb4f8d574f321e30eb18.png');
+    background-image: {-webkit-filter: brightness(250%);filter: brightness(250%);}
+}
+
+p {
+    text-align: center;
+    font-family: Comic Sans MS;
+    font-weight: bold;
+    font-size: 35px;
+    color: #EBD758;
+    text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+    6px 6px #414D68,
+    7px 7px #414D68,
+    8px 8px #414D68,
+    9px 9px #414D68;
+}
+
+
+#placas_insertar,
+#telefono_insertar,
+#codigo_nuevo,
+#nombre_mapa,
+#codigo_mapa,
+#placas_mapa,
+#codigo_login,
+#password_login,
+#placas_innovar,
+#nombre_innovar,
+#telefono_innovar,
+#password_innovar {
+    font-weight: bold;
+    color: yellow;
+}
+
+.estilo {
+    font-weight: bold;
+    color: black;
+}
+
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+

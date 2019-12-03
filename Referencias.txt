@@ -1,0 +1,15 @@
+Pagina Script google maps:
+
+https://mappinggis.com/2018/02/primeros-pasos-con-la-api-javascript-de-google-maps/
+
+https://programacion.net/articulo/google_maps_con_multiples_marcadores_y_ventana_de_informacion_mediante_la_api_v3_1738
+
+http://www.rubenalcaraz.es/pinakes/informatica/introduccion-a-google-maps-apiv3-parte-5-multiples-marcadores-con-infowindow/
+
+
+Página para recopilar los datos de una consulta SQL a traves de PHP:
+
+https://www.w3schools.com/php/func_mysqli_fetch_all.asp
+
+
+
